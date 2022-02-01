@@ -1,0 +1,10 @@
+/*-------- Schedule --------*/
+
+.schedule {
+    padding-top: 30px;
+    
+    &__table {
+        height: calc(100% - 30px);
+        margin-top: 10px;
+    }
+}

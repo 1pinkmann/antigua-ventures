@@ -2,18 +2,22 @@
     box-sizing: border-box;
 }
 
+html, body, #root {
+    height: 100%;
+}
+
 body {
-    min-height: 100vh;
     min-width: 320px;
 
     font-family: $font-r;
-    font-size: 16px;
-    color: #ffffff;
+    font-size: 14px;
+    color: rgba(221, 226, 255, 0.7);
 
-    background: url(../../images/background.svg), linear-gradient(87.58deg, #3768b1 1.72%, #1b3652 95.07%), #ffffff;
+    background: url(../../images/background.svg);
+    background-color: $black;
     background-position: center;
-    background-size: cover;
     background-repeat: no-repeat;
+    background-size: cover;
 }
 
 h1,
@@ -57,7 +61,7 @@ input[type="number"] {
 
 .container {
     width: 100%;
-    max-width: 1280px;
+    max-width: 1320px;
     margin-left: auto;
     margin-right: auto;
     padding: 0 20px;
@@ -75,21 +79,27 @@ input[type="number"] {
 .scrollwrapper {
     overflow-y: auto;
     overflow-x: hidden;
-    padding-right: 6px;
 
     &::-webkit-scrollbar {
-        width: 6px;
-        height: 6px;
+        width: 4px;
+
+        background: rgba(196, 196, 196, 0.1);
+        border-radius: 100px;
     }
 
     &::-webkit-scrollbar-thumb {
-        background-color: transparent;
-        border-radius: 4px;
+        width: 6px;
+        background: #DDE2FF;
+        border-radius: 100px;
     }
 
     &:hover::-webkit-scrollbar-thumb {
-        background-color: darkgrey;
+        background-color: #c0c8f8;
     }
+}
+
+.scroll-visible .scrollwrapper {
+    padding-right: 13px;
 }
 
 @media (hover: none) and (pointer: coarse) {
@@ -107,9 +117,5 @@ input[type="number"] {
 
     .container {
         padding: 0 12px;
-    }
-
-    .logo {
-        width: 28px;
     }
 }

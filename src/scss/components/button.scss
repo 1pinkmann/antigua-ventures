@@ -5,16 +5,16 @@
     align-items: center;
     justify-content: center;
 
-    height: 64px;
+    height: 56px;
     padding: 0 20px;
 
-    border: 1px solid #ffffff;
-    background-color: #ffffff;
-    border-radius: 100px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    border: 1px solid rgba(221, 226, 255, 0.1);
 
     font-family: $font-b;
-    font-size: 20px;
-    color: $black;
+    font-size: 16px;
+    color: #fff;
 
     transition: color 0.2s cubic-bezier(0.19, 1, 0.22, 1), background-color 0.2s cubic-bezier(0.19, 1, 0.22, 1),
         border-color 0.2s cubic-bezier(0.19, 1, 0.22, 1);
@@ -35,30 +35,14 @@
 }
 
 .button {
-    &--blue {
-        background-color: $blue;
-        border-color: $blue;
+
+    &--purple {
+        background-color: $purple;
+        border-color: $purple;
         color: #ffffff;
     }
 
-    &--blue:hover {
-        color: $blue;
-    }
-}
-
-@media (max-width: 479px) {
-
-    .button {
-        height: 48px;
-        font-size: 14px;
-        padding: 0 10px;
-    }
-
-    .button {
-
-        &--header {
-            height: 36px;
-            padding: 0 20px;
-        }
+    &--purple:hover {
+        color: $purple;
     }
 }

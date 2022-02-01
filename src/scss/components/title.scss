@@ -1,9 +1,10 @@
 /*-------- Title --------*/
 
 .title {
-    font-family: $font-b;
-    font-size: 26px;
-    text-align: center;
+    font-family: $font-fg;
+    font-size: 20px;
+    color: #ffffff;
+    letter-spacing: 1.9px;
 }
 
 @media (max-width: 479px) {

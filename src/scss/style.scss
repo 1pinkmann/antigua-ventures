@@ -1,10 +1,12 @@
 /*-------- Fonts --------*/
-$font-r: "Aeonik";
-$font-b: "Aeonik-Bold";
+$font-r: "Proxima Nova Rg";
+$font-b: "Proxima Nova Bold";
+$font-fg: "Freigeist";
 
 /*-------- Colors --------*/
-$blue: #2F9FF4;
-$black: #212121;
+$black: #060814;
+$purple: #B240DF;
+$purpleLinear: linear-gradient(263.82deg, #B240DF -12.94%, #D18CEC 115.37%);
 
 @import './reset.scss';
 @import './components/components.scss';
