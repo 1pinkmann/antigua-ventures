@@ -11,8 +11,8 @@ export default function Header({ popupVisible, setPopupVisible }) {
                 <a href="/" className="logo header__logo">
                     <Logo className="logo__icon" />
                 </a>
-                <button className={"button button--header header__button" + (popupVisible ? " active" : "")} style={{ display: "none" }} onClick={() => setPopupVisible(true)}>Connect Wallet</button>
-                <div className="header__account">
+                <button className={"button button--header header__button" + (popupVisible ? " active" : "")} onClick={() => setPopupVisible(true)}>Connect Wallet</button>
+                <div className="header__account" style={{ display: "none" }}>
                     <button className="header__account-button">
                         <span className="header__account-button-icon-wrapper">
                             <img src={metamaskIcon} className="header__account-button-icon" alt="metamask" />

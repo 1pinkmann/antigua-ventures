@@ -4,6 +4,7 @@ import Popup from './common/Popup';
 import metamaskIcon from "../images/icons/metamask.svg";
 import wcIcon from "../images/icons/wc.svg";
 import { useState } from 'react';
+import Close from './../Icons/Close';
 
 export default function ConnectPopup({ popupVisible, setPopupVisible }) {
     const [checkboxes, setCheckboxes] = useState({ metamask: false, walletConnect: false });
@@ -14,16 +15,13 @@ export default function ConnectPopup({ popupVisible, setPopupVisible }) {
 
     return (
         <Popup className="popup--connect" popupShow={popupVisible} setPopupShow={setPopupVisible}>
-            <header className="popup__header">
-                <button className="popup__back" onClick={closePopup}>
-                    <ArrowLeft className="popup__back-icon" />
-                    <span>Back</span>
-                </button>
-                <h2 className="popup__title popup__title--header">Connect Wallet</h2>
-            </header>
+            <button className="popup__close" onClick={closePopup}>
+                <Close className="popup__close-icon" />
+            </button>
+            <h2 className="popup__title">Connect Wallet</h2>
             <div className="popup__scrollwrapper scrollwrapper">
                 <div className="popup__container">
-                    <h1 className="popup__title popup__title--main">Select Method</h1>
+                    <h1 className="popup__text">Please select your provider</h1>
                     <div className="popup__checkboxes">
                         <button className={"popup__checkbox" + (checkboxes.metamask ? " active" : "")} onClick={() => setCheckboxes({ metamask: true, walletConnect: false })}>
                             <div className="popup__checkbox-icon-wrapper">
@@ -38,15 +36,9 @@ export default function ConnectPopup({ popupVisible, setPopupVisible }) {
                             <span>WalletConnect</span>
                         </button>
                     </div>
-                    <div className="popup__row">
-                        <p className="popup__text">New to Blockchain?</p>
-                        &nbsp;
-                        <a href="/" className="popup__text popup__text--link">Learn more about wallets</a>
-                    </div>
                 </div>
             </div>
-            <button className="popup__button popup__button--close" onClick={closePopup}>Close</button>
-            <button className="popup__button">Connect</button>
+            <button className="popup__button button button--purple">Connect</button>
         </Popup>
     );
 }
