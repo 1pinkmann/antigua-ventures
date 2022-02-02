@@ -1,17 +1,9 @@
-import Wallet from '../Icons/Wallet';
 import Logo from './../Icons/Logo';
-import Copy from './../Icons/Copy';
-import { useContext } from 'react';
-import { NotificationContext } from '../contexts/NotificationProvider';
-import Disconnect from './../Icons/Disconnect';
+import HeaderDropdown from './HeaderDropdown';
+import metamaskIcon from "../images/icons/metamask.svg";
+import Arrow from '../Icons/Arrow';
 
 export default function Header({ popupVisible, setPopupVisible }) {
-    const { setNotification } = useContext(NotificationContext);
-
-    function handleCopy() {
-        window.navigator.clipboard.writeText("0x7c8d1c186506df224a4e781b9f4ac6b9fasda21");
-        setNotification("Your address is copied.");
-    }
 
     return (
         <header className="header">
@@ -19,20 +11,17 @@ export default function Header({ popupVisible, setPopupVisible }) {
                 <a href="/" className="logo header__logo">
                     <Logo className="logo__icon" />
                 </a>
-                <button className={"button button--header header__button" + (popupVisible ? " active" : "")} onClick={() => setPopupVisible(true)}>Connect Wallet</button>
-                <div className="header__account" style={{ display: "none" }}>
-                    <div className="header__account-row">
-                        <Wallet className="header__account-icon" />
-                        <h3 className="header__account-title">Your Wallet Address</h3>
-                    </div>
-                    <button className="header__account-row" onClick={handleCopy}>
-                        <Copy className="header__account-icon" />
-                        <h3 className="header__account-address">0x7c8d1c186506df224a4e781b9f4ac6b9fasda21</h3>
+                <button className={"button button--header header__button" + (popupVisible ? " active" : "")} style={{ display: "none" }} onClick={() => setPopupVisible(true)}>Connect Wallet</button>
+                <div className="header__account">
+                    <button className="header__account-button">
+                        <span className="header__account-button-icon-wrapper">
+                            <img src={metamaskIcon} className="header__account-button-icon" alt="metamask" />
+                        </span>
+                        <span>0x7c8d1c186506...sda21</span>
+                        <Arrow className="header__account-button-arrow" />
                     </button>
+                    <HeaderDropdown />
                 </div>
-                <button className="header__disconnect" style={{ display: "none" }}>
-                    <Disconnect className="header__disconnect-icon" />
-                </button>
             </div>
         </header>
     );

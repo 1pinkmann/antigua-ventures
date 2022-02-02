@@ -113,7 +113,22 @@ input[type="number"] {
     }
 }
 
+@media (max-width: 989px) {
+
+    .logo {
+        width: 130px;
+    }
+}
+
 @media (max-width: 479px) {
+
+    body {
+        font-size: 12px;
+    }
+
+    .logo {
+        width: 38px;
+    }
 
     .container {
         padding: 0 12px;

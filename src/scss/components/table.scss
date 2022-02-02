@@ -68,3 +68,14 @@
         border-radius: 8px;
     }
 }
+
+@media (max-width: 1305px) {
+
+    .table {
+        overflow: auto;
+
+        &__header, &__scrollwrapper {
+            min-width: 500px;
+        }
+    }
+}
