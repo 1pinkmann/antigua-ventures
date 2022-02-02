@@ -1,4 +1,3 @@
-import ArrowLeft from '../Icons/ArrowLeft';
 import Popup from './common/Popup';
 
 import metamaskIcon from "../images/icons/metamask.svg";

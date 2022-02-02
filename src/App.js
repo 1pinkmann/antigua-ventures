@@ -3,7 +3,7 @@ import NotificationProvider from './contexts/NotificationProvider';
 import Select from './components/common/Select';
 
 import ConnectPopup from './components/ConnectPopup';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import Invest from './components/Invest';
 import Description from './components/Description';
 import Schedule from './components/Schedule';
@@ -61,23 +61,8 @@ const selectItemsArray = [
 
 export default function App() {
     const [popupVisible, setPopupVisible] = useState(false);
-    const [mobileScreen, setMobileScreen] = useState(false);
     const [selectItems, setSelectItems] = useState(selectItemsArray);
     const selectedItem = selectItems.find(item => item.selected === true);
-
-    useEffect(() => {
-        function handleMobileScreen() {
-            setMobileScreen(window.innerWidth < 990);
-        }
-
-        handleMobileScreen();
-
-        window.addEventListener('resize', handleMobileScreen);
-
-        return () => {
-            window.removeEventListener('resize', handleMobileScreen);
-        }
-    }, []);
 
     return (
         <NotificationProvider>
